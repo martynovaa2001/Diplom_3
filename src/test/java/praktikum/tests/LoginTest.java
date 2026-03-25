@@ -56,11 +56,7 @@ public class LoginTest extends BaseTest {
     @DisplayName("Проверка входа через кнопку в форме регистрации")
     @Description("Проверяем что кнопка офорления заказа появляется после входа через кнопку в форме регистрации")
     public void testLoginFromRegisterForm() {
-        String name = faker.name().fullName();
-        String email = faker.internet().emailAddress();
-        String password = faker.internet().password(8, 16);
         registerPage.open();
-        registerPage.register(name, email, password);
         registerPage.clickLoginLinkOnRegisterPage();
         loginPage.clickLogin();
         assertTrue("Кнопка оформления заказа должна появиться после входа через кнопку в форме регистрации",
